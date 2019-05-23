@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>triki</title>
+
+        <link rel="stylesheet" href="jquery-ui.css">
+        <style>
+            #o { width: 50px; height: 50px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+            #x { width: 50px; height: 50px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+            #droppable1 { width: 100px; height: 100px; padding: 0.5em; float: bottom; margin: 10px; }
+            #droppable2 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable3 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable4 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable5 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable6 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable7 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable8 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+            #droppable9 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px; }
+        </style>
+        <script src="jquery-1.12.4.js"></script>
+        <script src="jquery-ui.js"></script>
+        <script>
+            var opt = "O";
+            var matriz = [[], []];
+            function  calc() {
+                if (matriz[0][0] === matriz[0][1] && matriz[0][0] === matriz[0][2]){
+                    alert("Ganador");
+                };
+            }
+            $(function () {
+                $("button, input, a").click(function (event) {
+                    calc();
+                });
+                $("#o").draggable();
+                $("#x").draggable();
+                $("#droppable1").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[0][0] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable2").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[0][1] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable3").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[0][2] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable4").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[1][0] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable5").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[1][1] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable6").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[1][2] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable7").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[2][0] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                    }
+                });
+                $("#droppable8").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[2][1] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+                $("#droppable9").droppable({
+                    drop: function (event, ui) {
+                        $(this)
+                                .addClass("ui-state-highlight")
+                                .find("p")
+                                .html(opt);
+                        matriz[2][2] = opt;
+                        if (opt === "O") {
+                            opt = "X";
+                        } else {
+                            opt = "O";
+                        }
+                        calc();
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div id="o" class="ui-widget-content">
+            <p align="center">O</p>
+        </div>
+        <div id="x" class="ui-widget-content">
+            <p align="center">X</p>
+        </div>        
+        <table>
+            <tr>
+                <td>
+                    <div id="droppable1" class="ui-widget-header">
+                        <p align="center"></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="droppable2" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="droppable3" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="droppable4" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="droppable5" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="droppable6" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="droppable7" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="droppable8" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="droppable9" class="ui-widget-header">
+                        <p></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button class="ui-button ui-widget ui-corner-all">A button element</button>
+    </body>
+</html>
